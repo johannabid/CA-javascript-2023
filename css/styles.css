@@ -1,0 +1,12 @@
+.success {
+color: green;
+}
+
+.error, 
+.form-error {
+    color: red;
+}
+
+.form-error {
+    display: none;
+}

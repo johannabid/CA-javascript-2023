@@ -1,7 +1,5 @@
 import { url } from "./script.js";
 
-// const urlSpecific = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007";
-
 const cocktailSpecific  = document.querySelector('.cocktailspecific');
 
 async function fetchCocktailSpecificData () {
@@ -11,7 +9,7 @@ async function fetchCocktailSpecificData () {
     const details = await response.json();
     const drinks = details.drinks;
 
-    for (let i=0; i < drinks.length; i++) {
+     for (let i=0; i < drinks.length; i++) {
       const cocktail = drinks[i].strDrink;
   
       const instructions = [drinks[i].strInstructions];
@@ -32,8 +30,8 @@ finally {
 }
 fetchCocktailSpecificData();
 
-// make a function that prevents parameters with the value of null to show:
-// or a function with filtered inngredients with forEach?
+
+
 
 
 

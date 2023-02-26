@@ -4,16 +4,16 @@
 
 // const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita&idDrink=16158";
 
-const url2 = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007";
+// const url2 = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007";
 
-async function fetchCocktailName (){
-    const response = await fetch (url2);
-    const json = await response.json();
+// async function fetchCocktailName (){
+//     const response = await fetch (url2);
+//     const json = await response.json();
 
-    console.log(json);
-}
+//     console.log(json);
+// }
 
-fetchCocktailName();
+// fetchCocktailName();
 
 // const queryString = document.location.search;
 

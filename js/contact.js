@@ -16,49 +16,46 @@ const addressError = document.querySelector("#addressError");
 function validateForm (){
     event.preventDefault();
 
-if  (checkLength(name.value) === true) {
+if  (checkLength(name.value, 0) === true) {
     nameError.style.display = "none";
 }
  else {
     nameError.style.display = "block";
  }
 
-// name validation
-//  if (name.value.trim().length > 0) {
-//     nameError.style.display = "none";
-//  } else {
-//     nameError.style.display = "block";
-//  }
-
-//  // subject validation
-//  if (subject.value.trim().length > 9) {
-//     subjectError.style.display = "none";
-//  } else {
-//     subjectError.style.display = "block";
-//  }
-
-// // email validation
-//  if (email.value.trim().length > 0) {
-//     emailError.style.display = "none";
-//  } else {
-//     emailError.style.display = "block";
-//  }
-
-// // address validation
-//  if (address.value.trim().length > 24) {
-//     addressError.style.display = "none";
-//  } else {
-//     addressError.style.display = "block";
-//  }
-
+ if  (checkLength(subject.value, 9) === true) {
+    subjectError.style.display = "none";
 }
+ else {
+    subjectError.style.display = "block";
+ }
+ 
+ if  (validateEmail(email.value) === true) {
+    emailError.style.display = "none";
+}
+ else {
+    emailError.style.display = "block";
+ }
 
-function checkLength (value) {
-    if (value.trim().length > 0) {
+ if  (checkLength(address.value, 24) === true) {
+    addressError.style.display = "none";
+}
+ else {
+    addressError.style.display = "block";
+ }
+}
+function checkLength (value, len) {
+    if (value.trim().length > len) {
         return true;
     } else {
         return false;
     }
+}
+
+function validateEmail (email) {
+    const emailCriteria = /\S+@\S+\.\S+/;
+    const patternMatches = emailCriteria.test(email);
+    return patternMatches;
 }
 
 form.addEventListener("submit", validateForm);
@@ -73,3 +70,4 @@ form.onsubmit = function () {
 
     console.log (name.value);
 };
+
